@@ -1,0 +1,133 @@
+/* 
+
+font-family: 'Roboto Condensed', sans-serif; */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+}
+
+body {
+  background-color: #ddd;
+}
+
+/*          ============            */
+/*          css for navbar          */
+/*          ============           */
+
+.nav-container {
+  max-width: 1170px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 2rem;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.logo {
+  font-family: "Akronim", cursive;
+  text-shadow: 4px 4px 11px rgba(150, 150, 150, 1);
+  font-size: 2rem;
+  color: #333;
+}
+.toggle-btn {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  padding: 0.3rem 0.7rem;
+  background-color: transparent;
+  cursor: pointer;
+}
+.toggle-btn:active {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+}
+.toggle-btn i {
+  font-size: 1.5rem;
+  color: #555;
+}
+
+.links-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 0;
+  overflow: hidden;
+  transition: 0.7s height ease-in-out;
+}
+
+.show-links {
+  height: 280px;
+}
+
+.links-container .link {
+  border-top: 1px solid black;
+  font-size: 1.1rem;
+  padding: 1rem;
+  font-family: "Nova Square", cursive;
+  text-decoration: none;
+  color: black;
+}
+.links-container .link:hover {
+  color: rgb(100, 97, 97);
+}
+
+.button-link .contact-btn {
+  padding: 0.3rem 0.7rem;
+  font-size: 1.1rem;
+  font-family: "Nova Square", cursive;
+  background-color: rgba(0, 0, 0, 1);
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.button-link .contact-btn:active {
+  background-color: rgba(0, 0, 0, 1);
+
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid black;
+}
+
+@media (min-width: 992px) {
+  .toggle-btn {
+    display: none;
+  }
+  .nav-container {
+    flex-direction: row;
+    padding: 1rem 2rem;
+    align-items: center;
+  }
+  .links-container {
+    flex-direction: row;
+    height: auto;
+    align-items: center;
+    width: 100%;
+  }
+  .links-container .link {
+    border: none;
+    /* padding: 0; */
+  }
+  .logo-container {
+    margin-bottom: 0;
+    margin-right: 2.4rem;
+  }
+  .logo {
+    font-size: 3rem;
+  }
+  .button-link {
+    margin-left: auto;
+  }
+}
+@media (min-width: 768px) {
+  .logo {
+    font-size: 3rem;
+  }
+}
+/*          ============            */
+/*          end css for navbar      */
+/*          ============             */
