@@ -13,5 +13,4 @@ const links = getElement(".links-container");
 togglebtn.addEventListener("click", function () {
   links.classList.toggle("show-links");
 });
-
-console.log(links.getBoundingClientRect().height);
+// end js for navbar
