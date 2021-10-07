@@ -1,0 +1,58 @@
+[
+  {
+    "title": "strawberry eggs",
+    "image": "./image/bf1.jpg",
+    "prep": "10min",
+    "cook": "5min",
+    "category": "breakfast"
+  },
+  {
+    "title": "beef eggs",
+    "image": "./image/bf2.jpg",
+    "prep": "15min",
+    "cook": "10min",
+    "category": "breakfast"
+  },
+  {
+    "title": "completed salad",
+    "image": "./image/dinner1.jpg",
+    "prep": "13min",
+    "cook": "10min",
+    "category": "dinner"
+  },
+  {
+    "title": "beef and rice",
+    "image": "./image/dinner2.jpg",
+    "prep": "17min",
+    "cook": "12min",
+    "category": "dinner"
+  },
+  {
+    "title": "rice steaks",
+    "image": "./image/lunch1.jpg",
+    "prep": "13min",
+    "cook": "20min",
+    "category": "lunch"
+  },
+  {
+    "title": "slices steaks",
+    "image": "./image/lunch2.jpg",
+    "prep": "15min",
+    "cook": "18min",
+    "category": "lunch"
+  },
+  {
+    "title": "butters cookie",
+    "image": "./image/snacks1.jpg",
+    "prep": "10min",
+    "cook": "5min",
+    "category": "snacks"
+  },
+  {
+    "title": "peanut doughnuts",
+    "image": "./image/snacks2.jpg",
+    "prep": "10min",
+    "cook": "5min",
+    "category": "snacks"
+  }
+]
