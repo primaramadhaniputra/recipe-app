@@ -143,6 +143,7 @@ body {
 /*          ============            */
 /*         css for header      */
 /*          ============             */
+
 .banner {
   max-width: 1170px;
   margin: 0 auto;
@@ -279,6 +280,147 @@ article.content {
 }
 /*          ============            */
 /*         end css for header      */
+/*          ============             */
+
+/* ===================================== */
+
+/* ===================================== */
+
+/*          ============            */
+/*         css for about      */
+/*          ============             */
+
+.about {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem;
+}
+.about-banner {
+  display: grid;
+  gap: 2rem 1rem;
+}
+.about-info h3 {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 2.2rem;
+  letter-spacing: 3px;
+  font-weight: bolder;
+  color: black;
+  padding-bottom: 1.5rem;
+}
+
+.about-info p {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1.2rem;
+  padding-bottom: 1rem;
+  margin-right: auto;
+}
+.about-contact {
+  padding: 0.3rem 0.7rem;
+  font-size: 1.1rem;
+  font-family: "Nova Square", cursive;
+  background-color: rgba(0, 0, 0, 1);
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.about-contact:active {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.about-image {
+  background: url("./image/snacks2.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  border-radius: 5px;
+  max-height: 50vh;
+  height: 40vh;
+  background-color: red;
+}
+
+.about-content .info-about {
+  font-size: 1.5rem;
+  text-align: center;
+  font-family: "Nova Square", cursive;
+  font-weight: 400;
+  padding: 1.3rem;
+}
+
+.about-content {
+  margin-top: 2rem;
+}
+
+.about-image-container {
+  display: grid;
+  gap: 2rem 1rem;
+}
+
+.image-container .image {
+  max-height: 40vh;
+  width: 100%;
+  border-radius: 5px;
+  transition: 0.3s opacity ease;
+}
+.image-container .image img {
+  width: 100%;
+  border-radius: 5px;
+}
+.image-container .image:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+.image-title {
+  font-size: 1.3rem;
+  font-family: "Roboto Condensed", sans-serif;
+  padding-top: 1rem;
+  padding-bottom: 0.2rem;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.7);
+}
+.image-info {
+  font-family: "Roboto Condensed", sans-serif;
+  word-spacing: 5px;
+}
+@media (min-width: 576px) {
+  .about-image-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 992px) {
+  .about-banner {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 3rem;
+    margin-top: 1rem;
+  }
+  .about-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .about-contact {
+    margin-right: auto;
+    margin-top: 1rem;
+  }
+  .about-image {
+    height: 45vh;
+  }
+}
+@media (min-width: 1170px) {
+  .about {
+    padding: 1.5rem 0;
+  }
+  .about-image-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/*          ============            */
+/*         end css for about      */
 /*          ============             */
 
 /* ===================================== */
