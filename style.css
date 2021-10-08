@@ -424,6 +424,52 @@ article.content {
 /*          ============             */
 
 /* ===================================== */
+/* css fo tags */
+
+.tags-page {
+  max-width: 1170px;
+  margin: 0 auto;
+  height: calc(100vh - 180px);
+}
+.tags-page-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem 1rem;
+  padding: 0 1rem;
+}
+.single-tag {
+  background-color: #333;
+  font-family: "Roboto Condensed", sans-serif;
+  color: #eee;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  transition: 0.3s ease;
+  border-radius: 5px;
+}
+
+.single-tag:hover {
+  background-color: #eee;
+  color: #333;
+  cursor: pointer;
+}
+.single-tag h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.3rem;
+}
+
+@media (min-width: 576px) {
+  .tags-page-container {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 2rem;
+  }
+}
+@media (min-width: 992px) {
+  .tags-page-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+/* end css fo tags */
+/* ===================================== */
 
 /*          ============            */
 /*         css for footer     */
@@ -434,8 +480,8 @@ footer {
   padding: 2rem 0;
   text-align: center;
   position: relative;
-  width: 100%;
   bottom: 0;
+  width: 100%;
   font-size: 1rem;
   font-family: "Nova Square", cursive;
 }

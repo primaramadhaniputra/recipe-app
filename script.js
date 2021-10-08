@@ -10,10 +10,8 @@ const getElement = (selector) => {
 // html elements
 const togglebtn = getElement(".toggle-btn");
 const links = getElement(".links-container");
-// const foodContainer = getElement(".food-container");
 const btns = document.querySelectorAll(".link");
 const main = getElement(".main");
-
 // class for get product
 class Products {
   getProduct() {
@@ -98,6 +96,38 @@ class UiProduct {
   </section>`;
     main.innerHTML = about;
   }
+  static tags() {
+    main.innerHTML = `
+    <section class="tags-page">
+        <article class="tags-page-container">
+          <!-- single tags -->
+          <div class="single-tag">
+            <h3 class="single-tag-heading">Beef</h3>
+            <p class="single-tag-value">3 recipe</p>
+          </div>
+          <!--  end of single tags -->
+          <!-- single tags -->
+          <div class="single-tag">
+            <h3 class="single-tag-heading">Beef</h3>
+            <p class="single-tag-value">3 recipe</p>
+          </div>
+          <!--  end of single tags -->
+          <!-- single tags -->
+          <div class="single-tag">
+            <h3 class="single-tag-heading">Beef</h3>
+            <p class="single-tag-value">3 recipe</p>
+          </div>
+          <!--  end of single tags -->
+          <!-- single tags -->
+          <div class="single-tag">
+            <h3 class="single-tag-heading">Beef</h3>
+            <p class="single-tag-value">3 recipe</p>
+          </div>
+          <!--  end of single tags -->
+          
+        </article>
+      </section>`;
+  }
 }
 // instansiate class
 const product = new Products();
@@ -128,6 +158,9 @@ btns.forEach((btn) => {
         .getDataProducts()
         .then((res) => res.json())
         .then((res) => UiProduct.aboutProduct(res));
+    }
+    if (e.target.textContent == "tags") {
+      UiProduct.tags();
     }
   });
 });
