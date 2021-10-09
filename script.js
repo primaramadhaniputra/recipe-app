@@ -12,6 +12,7 @@ const togglebtn = getElement(".toggle-btn");
 const links = getElement(".links-container");
 const btns = document.querySelectorAll(".link");
 const main = getElement(".main");
+const contactBtn = getElement(".contact-btn");
 // class for get product
 class Products {
   getProduct() {
@@ -102,26 +103,26 @@ class UiProduct {
         <article class="tags-page-container">
           <!-- single tags -->
           <div class="single-tag">
-            <h3 class="single-tag-heading">Beef</h3>
-            <p class="single-tag-value">3 recipe</p>
+            <h3 class="single-tag-heading">breakfast</h3>
+            <p class="single-tag-value">2 recipe</p>
           </div>
           <!--  end of single tags -->
           <!-- single tags -->
           <div class="single-tag">
-            <h3 class="single-tag-heading">Beef</h3>
-            <p class="single-tag-value">3 recipe</p>
+            <h3 class="single-tag-heading">dinner</h3>
+            <p class="single-tag-value">2 recipe</p>
           </div>
           <!--  end of single tags -->
           <!-- single tags -->
           <div class="single-tag">
-            <h3 class="single-tag-heading">Beef</h3>
-            <p class="single-tag-value">3 recipe</p>
+            <h3 class="single-tag-heading">lunch</h3>
+            <p class="single-tag-value">2 recipe</p>
           </div>
           <!--  end of single tags -->
           <!-- single tags -->
           <div class="single-tag">
-            <h3 class="single-tag-heading">Beef</h3>
-            <p class="single-tag-value">3 recipe</p>
+            <h3 class="single-tag-heading">snacks</h3>
+            <p class="single-tag-value">2 recipe</p>
           </div>
           <!--  end of single tags -->
           
@@ -157,6 +158,55 @@ class UiProduct {
   </header>`;
     main.innerHTML = home;
   }
+  static contact(res) {
+    let data = "";
+    res.forEach((element) => {
+      data += `<div class="image-container">
+      <div class="image">
+      <img src=${element.image} alt=${element.title} /></div>
+      <p class="image-title">${element.title}</p>
+      <p class="image-info">prep : ${element.prep} | cook : ${element.cook}</p>
+    </div>`;
+    });
+    let about = ` <section class="about">
+    <article class="about-banner">
+      <div class="about-info">
+        <h3>Want To Get In Touch?</h3>
+        <p>Four dollar toast biodiesel plaid salvia actually pickled banjo bespoke mlkshk intelligentsia edison bulb synth.</p>
+        <p>Cardigan prism bicycle rights put a bird on it deep v.</p>
+        <p>Hashtag swag health goth air plant, raclette listicle fingerstache cold-pressed fanny pack bicycle rights cardigan poke.</p>
+        
+      </div>
+      <div class="about-form">
+      <form>
+            <div class="input-container">
+              <div class="single-input">
+                <label for="name" class="name">Your name</label>
+                <input type="text" id="name" >
+              </div>
+              <div class="single-input">
+                <label for="email" class="email">Your email</label>
+                <input type="text" id="email" >
+              </div>
+              <div class="single-input">
+                <label for="message" class="message">message</label>
+              <textarea name="" id="message" disabled="true"></textarea>
+              </div>
+            </div>
+          </form>
+      </div>
+    </article>
+    <article class="about-content">
+      <p class="info-about">Look At This Awesomesouce!</p>
+      <div class="about-image-container">
+        <!-- single image -->
+      ${data}
+        <!-- end single image -->
+      </div>
+    </article>
+  </section>`;
+    main.innerHTML = about;
+  }
 }
 // instansiate class
 const product = new Products();
@@ -169,7 +219,7 @@ togglebtn.addEventListener("click", function () {
 
 // js for product
 window.addEventListener("DOMContentLoaded", function () {
-  // product.getProduct();
+  product.getProduct();
 });
 
 // js for each link
@@ -198,4 +248,11 @@ btns.forEach((btn) => {
         .then((res) => UiProduct.recipes(res));
     }
   });
+});
+
+contactBtn.addEventListener("click", function () {
+  product
+    .getDataProducts()
+    .then((res) => res.json())
+    .then((res) => UiProduct.contact(res));
 });
