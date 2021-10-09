@@ -128,6 +128,35 @@ class UiProduct {
         </article>
       </section>`;
   }
+  static recipes(res) {
+    let data = "";
+    res.forEach((response) => {
+      data += `<div class="single-food">
+      <div class="image-food">
+        <img src=${response.image} alt=${response.title} />
+      </div>
+      <p class="food-title">${response.title}</p>
+      <div class="cook-time">
+        <p>prep : ${response.prep} | cook : ${response.cook}</p>
+      </div>
+    </div>`;
+    });
+    let home = `<header>
+    <article class="content">
+      <div class="tags-container">
+        <h3>recipes</h3>
+        <div class="tags">
+          <p>breakfast <span class="value-tags">(2)</span></p>
+          <p>lunch<span class="value-tags">(2)</span></p>
+          <p>dinner <span class="value-tags">(2)</span></p>
+          <p>snacks <span class="value-tags">(2)</span></p>
+        </div>
+      </div>
+      <div class="food-container">${data}</div>
+    </article>
+  </header>`;
+    main.innerHTML = home;
+  }
 }
 // instansiate class
 const product = new Products();
@@ -140,7 +169,7 @@ togglebtn.addEventListener("click", function () {
 
 // js for product
 window.addEventListener("DOMContentLoaded", function () {
-  product.getProduct();
+  // product.getProduct();
 });
 
 // js for each link
@@ -161,6 +190,12 @@ btns.forEach((btn) => {
     }
     if (e.target.textContent == "tags") {
       UiProduct.tags();
+    }
+    if (e.target.textContent == "recipes") {
+      product
+        .getDataProducts()
+        .then((res) => res.json())
+        .then((res) => UiProduct.recipes(res));
     }
   });
 });
